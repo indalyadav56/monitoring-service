@@ -1,0 +1,18 @@
+global:
+  scrape_interval: 15s # How often Prometheus scrapes the metrics
+
+scrape_configs:
+  - job_name: "consul-services"
+    consul_sd_configs:
+      - server: "localhost:8500"
+        services: ["my-metrics-service"]
+    relabel_configs:
+      # Only keep services with the "metrics" tag
+      - source_labels: [__meta_consul_service]
+        action: keep
+        regex: "my-metrics-service"
+# docker run -d \
+#   --name prometheus \
+#   -p 9090:9090 \
+#   -v /path/to/prometheus.yml:/etc/prometheus/prometheus.yml \
+#   prom/prometheus
