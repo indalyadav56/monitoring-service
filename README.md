@@ -78,6 +78,17 @@ Promtail is configured via `promtail-config.yaml`. By default, it collects logs 
 
 Grafana comes pre-configured with Prometheus and Loki as data sources. Additional dashboards can be added through the UI or via the provisioning system.
 
+## Screenshots
+
+### Dashboard Overview
+![Dashboard Overview](./screenshots/image1.png)
+
+### Metrics Visualization
+![Metrics Visualization](./screenshots/image2.png)
+
+### Logs and Tracing
+![Logs and Tracing](./screenshots/image3.png)
+
 ## Development
 
 For development purposes, you can use the `dev-compose.yml` file which provides a lighter version of the stack:
@@ -89,4 +100,3 @@ docker-compose -f dev-compose.yml up -d
 ## Examples
 
 The `examples` directory contains sample configurations and setups for different use cases.
-
